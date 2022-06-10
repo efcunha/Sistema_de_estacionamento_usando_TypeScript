@@ -42,7 +42,7 @@
             const vehicle = read().find((vehicle) => vehicle.plate === plate);
             // console.log(vehicle!.name);
             const time = calcTime(new Date().getTime() - new Date(vehicle.entrance).getTime());
-            if (!confirm(`The vehicle ${vehicle.name} has been parked for ${time}.\n Do you wish to close it?`))
+            if (!confirm(`O veículo ${vehicle.name} está estacionado há ${time}.\n Deseja fechá-lo?`))
                 return;
             save(read().filter((vehicle) => vehicle.plate !== plate));
             $("#garage").innerHTML = "";
