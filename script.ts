@@ -1,6 +1,6 @@
 // interface - tipico typescript, similar a uma classe
 // esse codigo interface nao entra no javascript, serve apenas para auxiliar
-interface Vehicle {
+interface Veiculo {
   name?: string;
   plate?: string;
   entrance: Date | string;
@@ -20,23 +20,23 @@ interface Vehicle {
   };
 
   const garage = () => {
-    const read = (): Vehicle[] => {
+    const read = (): Veiculo[] => {
       return localStorage.garage ? JSON.parse(localStorage.garage) : [];
     };
 
-    const save = (vehicles: Vehicle[]) => {
-      localStorage.setItem("garage", JSON.stringify(vehicles));
+    const save = (Veiculos: Veiculo[]) => {
+      localStorage.setItem("garage", JSON.stringify(Veiculos));
     };
 
-    const add = (vehicle: Vehicle, saveIt?: boolean) => {
+    const add = (Veiculo: Veiculo, saveIt?: boolean) => {
       //saveit parametro opcional
       const row = document.createElement("tr");
       row.innerHTML = `
-        <td>${vehicle.name}</td>
-        <td>${vehicle.plate}</td>
-        <td>${vehicle.entrance}</td>
+        <td>${Veiculo.name}</td>
+        <td>${Veiculo.plate}</td>
+        <td>${Veiculo.entrance}</td>
         <td>
-          <button class="delete btn btn-danger" data-plate=${vehicle.plate}>X</button>
+          <button class="delete btn btn-danger" data-plate=${Veiculo.plate}>X</button>
         </td>
       `;
 
@@ -48,24 +48,24 @@ interface Vehicle {
         });
 
       $("#garage")?.appendChild(row);
-      if (saveIt) save([...read(), vehicle]);
+      if (saveIt) save([...read(), Veiculo]);
     };
 
     const remove = (plate: string) => {
-      const vehicle = read().find((vehicle) => vehicle.plate === plate);
-      // console.log(vehicle!.name);
+      const Veiculo = read().find((Veiculo) => Veiculo.plate === plate);
+      // console.log(Veiculo!.name);
       const time = calcTime(
-        new Date().getTime() - new Date(vehicle!.entrance).getTime()
+        new Date().getTime() - new Date(Veiculo!.entrance).getTime()
       );
       if (
         !confirm(
-          `The vehicle ${
-            vehicle!.name
+          `The Veiculo ${
+            Veiculo!.name
           } has been parked for ${time}.\n Do you wish to close it?`
         )
       )
         return;
-      save(read().filter((vehicle) => vehicle.plate !== plate));
+      save(read().filter((Veiculo) => Veiculo.plate !== plate));
       $("#garage")!.innerHTML = "";
       render();
     };
@@ -77,7 +77,7 @@ interface Vehicle {
       const garage = read();
       // console.log(garage, "garage");
       if (garage.length) {
-        garage.forEach((vehicle) => add(vehicle));
+        garage.forEach((Veiculo) => add(Veiculo));
       }
     };
 

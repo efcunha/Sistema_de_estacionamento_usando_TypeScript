@@ -65,7 +65,7 @@
         const name = (_a = $("#name")) === null || _a === void 0 ? void 0 : _a.value;
         const plate = (_b = $("#plate")) === null || _b === void 0 ? void 0 : _b.value;
         if (!name || !plate)
-            alert("The name and plate are required");
+            alert("O nome e a placa são obrigatórios");
         garage().add({ name, plate, entrance: new Date().toISOString() }, true);
     });
 })();
