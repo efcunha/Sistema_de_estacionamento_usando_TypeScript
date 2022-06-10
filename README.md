@@ -5,7 +5,7 @@ Desafio do Bootcamp Spread Fullstack Developer da DIO:
 
 Criando um sistema de estacionamento usando TypeScript
 ---
-# Skills / _Habilidades_
+# Habilidades_
 
 - HTML, CSS, Javascript
 - Typescript
@@ -21,4 +21,4 @@ Criando um sistema de estacionamento usando TypeScript
 
 # Implantação_
 
-**Veja em ação**: [https://kelsonbatista.github.io/dio-typescript-parking-lot/](https://kelsonbatista.github.io/dio-typescript-parking-lot/)
+**Veja em ação**: [https://github.com/efcunha/Sistema_de_estacionamento_usando_TypeScript](https://github.com/efcunha/Sistema_de_estacionamento_usando_TypeScript)
