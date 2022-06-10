@@ -11,14 +11,7 @@ Criando um sistema de estacionamento usando TypeScript
 - Typescript
 - Bootstrap
 - Local Storage
-
 ---
-# Layout
-
-<img src="./assets/images/layout.gif" alt="Parking Control System" />
-
----
-
 # Implantação
 
 **Veja em ação**: [https://github.com/efcunha/Sistema_de_estacionamento_usando_TypeScript](https://github.com/efcunha/Sistema_de_estacionamento_usando_TypeScript)
